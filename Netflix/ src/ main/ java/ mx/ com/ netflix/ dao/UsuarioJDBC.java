@@ -9,9 +9,12 @@ import mx.com.netflix.models.Usuario;
 
 @Repository
 public class UsuarioJDBC implements UsuarioDAO {
+//esta variable inyecta la conexion a la base de datos	
 	@Autowired
 	JdbcTemplate conexion;
- String sql;
+//esta variable se utiliza para guardar codigo sql
+	String sql;
+	
 	@Override
 	public List<Usuario> consultar() {
 		sql = "SELECT * FROM usuarios";
